@@ -1,33 +1,33 @@
 package com.my.entity;
 
 public class PoemWithBLOBs extends Poem {
-    private byte[] content;
+    private String content;
 
-    private byte[] annotation;
+    private String annotation;
 
-    private byte[] appreciate;
+    private String appreciate;
 
-    public byte[] getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(byte[] content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
-    public byte[] getAnnotation() {
+    public String getAnnotation() {
         return annotation;
     }
 
-    public void setAnnotation(byte[] annotation) {
+    public void setAnnotation(String annotation) {
         this.annotation = annotation;
     }
 
-    public byte[] getAppreciate() {
+    public String getAppreciate() {
         return appreciate;
     }
 
-    public void setAppreciate(byte[] appreciate) {
+    public void setAppreciate(String appreciate) {
         this.appreciate = appreciate;
     }
 }

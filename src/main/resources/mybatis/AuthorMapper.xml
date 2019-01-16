@@ -92,4 +92,11 @@
       dynasty = #{dynasty,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="listAuthors" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from author;
+
+  </select>
 </mapper>

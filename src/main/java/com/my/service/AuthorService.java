@@ -1,6 +1,9 @@
 package com.my.service;
 
+import com.my.domain.AuthorQueryDo;
 import com.my.entity.Author;
+
+import java.util.List;
 
 public interface AuthorService {
 	/**
@@ -8,4 +11,7 @@ public interface AuthorService {
 	 * @param author
 	 */
 	void addAuthor(Author author);
+
+	List<Author> listAuthors(AuthorQueryDo queryDo);
+
 }

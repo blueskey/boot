@@ -1,18 +1,18 @@
 package com.my.controller;
 
+import com.my.domain.AuthorQueryDo;
 import com.my.entity.Author;
 import com.my.service.AuthorService;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequestMapping("/author/")
-@MapperScan({"com.my.mapper","com.my.mapper"})
-public class AuthorController {
+public class AuthorController extends BaseController{
 
 	@Autowired
 	private AuthorService authorService;
@@ -21,7 +21,12 @@ public class AuthorController {
 	@RequestMapping(value = "add",method = RequestMethod.GET)
 	public String toAdd() {
 
-		return "add.html";
+		return "author/add";
+	}
+
+	@RequestMapping(value = "list") public String list(ModelMap modelMap, AuthorQueryDo queryDo) {
+		modelMap.addAttribute("authors", authorService.listAuthors(queryDo));
+		return "author/list";
 	}
 
 	@ResponseBody
