@@ -1,5 +1,6 @@
 package com.my.controller;
 
+import com.my.domain.PoemDo;
 import com.my.domain.PoemQueryDo;
 import com.my.entity.PoemWithBLOBs;
 import com.my.service.AuthorService;
@@ -7,9 +8,12 @@ import com.my.service.PoemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/poem/")
@@ -38,5 +42,14 @@ public class PoemController extends BaseController {
 	public String list(ModelMap modelMap, PoemQueryDo queryDo) {
 		modelMap.addAttribute("poems", poemService.listPoems(queryDo));
 		return "poem/list";
+	}
+
+	@RequestMapping(value = "detail")
+	public String detail(ModelMap modelMap,String id) {
+		PoemQueryDo queryDo = new PoemQueryDo();
+		queryDo.setId(id);
+		List<PoemDo> poems = poemService.listPoems(queryDo);
+		modelMap.addAttribute("poem", CollectionUtils.isEmpty(poems)?null:poems.get(0));
+		return "poem/detail";
 	}
 }

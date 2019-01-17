@@ -10,4 +10,6 @@ public interface PoemService {
 	void addPoem(PoemWithBLOBs poem);
 
 	List<PoemDo> listPoems(PoemQueryDo queryDo);
+
+	PoemWithBLOBs selectById(String id);
 }

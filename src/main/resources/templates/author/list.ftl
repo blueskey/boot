@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<input type="button" value="添加" href="/author/add"/>
+<a type="button"  href="/author/add">添加</a>
 
 <form action="/author/list" method="post">
 <div class="plat">

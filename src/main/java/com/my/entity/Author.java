@@ -7,7 +7,7 @@ public class Author {
 
     private String dynasty;
 
-    private byte[] introduction;
+    private String introduction;
 
     public Long getId() {
         return id;
@@ -33,11 +33,11 @@ public class Author {
         this.dynasty = dynasty == null ? null : dynasty.trim();
     }
 
-    public byte[] getIntroduction() {
+    public String getIntroduction() {
         return introduction;
     }
 
-    public void setIntroduction(byte[] introduction) {
+    public void setIntroduction(String introduction) {
         this.introduction = introduction;
     }
 }

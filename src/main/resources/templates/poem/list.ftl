@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<input type="button" value="添加" href="/poem/add"/>
+<a type="button"  href="/poem/add" methods="get">添加</a>
 
 <form action="/poem/list" method="post">
 <div class="plat">
@@ -22,6 +22,9 @@
                </td>
                <td>
                ${poem.content!''}
+               </td>
+               <td>
+              <a href="/poem/detail?id=${poem.id!''}">详情</a>
                </td>
                </tr>
            </#list>

@@ -6,6 +6,9 @@ public class PoemDo {
 	private String title;
 
 	private String author;
+
+	private String dynasty;
+
 	private String content;
 
 	private String annotation;
@@ -18,6 +21,14 @@ public class PoemDo {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getDynasty() {
+		return dynasty;
+	}
+
+	public void setDynasty(String dynasty) {
+		this.dynasty = dynasty;
 	}
 
 	public String getTitle() {

@@ -7,7 +7,7 @@
     <result column="dynasty" jdbcType="VARCHAR" property="dynasty" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.my.entity.Author">
-    <result column="introduction" jdbcType="LONGVARBINARY" property="introduction" />
+    <result column="introduction" property="introduction"  typeHandler="com.my.MyBlobTypeHandler"/>
   </resultMap>
   <sql id="Base_Column_List">
     id, name, dynasty
@@ -84,7 +84,7 @@
     set name = #{name,jdbcType=VARCHAR},
       dynasty = #{dynasty,jdbcType=VARCHAR},
       introduction = #{introduction,jdbcType=LONGVARBINARY}
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}BaseResultMap
   </update>
   <update id="updateByPrimaryKey" parameterType="com.my.entity.Author">
     update author
@@ -93,9 +93,11 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-  <select id="listAuthors" resultMap="BaseResultMap">
+  <select id="listAuthors" resultMap="ResultMapWithBLOBs">
     select
-    <include refid="Base_Column_List"/>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
     from author;
 
   </select>

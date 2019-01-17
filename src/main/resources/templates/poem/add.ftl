@@ -18,7 +18,6 @@
                 </#list>
             </#if>
         </select>
-        <input class="form-inline" name="author"/>
         <label>内容</label>
         <textarea class="form-inline" name="content"></textarea>
         <label>注释</label>

@@ -12,6 +12,17 @@
     <result column="annotation" jdbcType="LONGVARBINARY" property="annotation" />
     <result column="appreciate" jdbcType="LONGVARBINARY" property="appreciate" />
   </resultMap>
+
+  <resultMap id="PoemDoResultMap"  type="com.my.domain.PoemDo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="name" jdbcType="VARCHAR" property="author" />
+    <result column="dynasty" jdbcType="VARCHAR" property="dynasty" />
+    <result column="content"  property="content" typeHandler="com.my.MyBlobTypeHandler"/>
+    <result column="annotation"  property="annotation" typeHandler="com.my.MyBlobTypeHandler"/>
+    <result column="appreciate"  property="appreciate" typeHandler="com.my.MyBlobTypeHandler"/>
+  </resultMap>
+
   <sql id="Base_Column_List">
     id, title, author, type
   </sql>
@@ -129,8 +140,12 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-  <select id="listPoems" resultType="com.my.domain.PoemDo">
-    select p.id as id ,p.title as title,a.name as author ,p.content as content,p.annotation as annotation,p.appreciate as appreciate
+  <select id="listPoems" resultMap="PoemDoResultMap" parameterType="com.my.domain.PoemQueryDo">
+    select p.id as id ,p.title as title,a.dynasty as dynasty,a.name as author ,p.content as content,p.annotation as annotation,p.appreciate as appreciate
     from poem p join author a on a.id=p.author
+    where 1=1
+    <if test='id!=null and id!=""'>
+      and p.id=#{id}
+    </if>
   </select>
 </mapper>

@@ -6,6 +6,7 @@ import com.my.entity.PoemWithBLOBs;
 import com.my.mapper.PoemMapper;
 import com.my.service.PoemService;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,5 +24,12 @@ public class PoemServiceImpl implements PoemService {
 	@Override public List<PoemDo> listPoems(PoemQueryDo queryDo) {
 
 		return poemMapper.listPoems(queryDo);
+	}
+
+	@Override public PoemWithBLOBs selectById(String id) {
+		if(StringUtils.isEmpty(id)) {
+			return null;
+		}
+		return poemMapper.selectByPrimaryKey(Long.parseLong(id));
 	}
 }
