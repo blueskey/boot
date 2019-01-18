@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>诗/词列表</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -10,23 +11,16 @@
 
 <form action="/poem/list" method="post">
 <div class="plat">
-   <table>
+   <div></div>
        <#if poems??>
            <#list  poems as poem>
-               <tr>
-               <td>
-               ${poem.title!''}
-               </td>
-               <td>
-               ${poem.author!''}
-               </td>
-               <td>
-               ${poem.content!''}
-               </td>
-               <td>
-              <a href="/poem/detail?id=${poem.id!''}">详情</a>
-               </td>
-               </tr>
+               <p class="p-0">
+               <em>${poem.title!''}</em>
+               <em>${poem.author!''}</em>
+               <a href="/poem/detail?id=${poem.id!''}">${poem.content!''}</a>
+               </p>
+
+
            </#list>
        </#if>
 
