@@ -14,7 +14,7 @@ spring:
     #url: jdbc:mysql://localhost:3306/study?serverTimezone=Asia/Shanghai
     username: root
     password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     #默认org.apache.tomcat.jdbc.pool.DataSource
    # type: com.alibaba.druid.pool.DruidDataSource
   groovy:
