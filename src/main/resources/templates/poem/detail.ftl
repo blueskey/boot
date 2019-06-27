@@ -9,7 +9,7 @@
 <a type="button"  href="/poem/list" methods="get">返回</a>
     <div class="plat">
         <h3>  ${poem.title!''}</h3>
-        <h5 class="right-float"> ${poem.dynasty!''} @ ${poem.author!''}</h5>
+        <h5 class="right-float"> ${poem.dynasty!''} ● ${poem.author!''}</h5>
         <p>   ${poem.content!''}</p>
     </div>
 </body>
