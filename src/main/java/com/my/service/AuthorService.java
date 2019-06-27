@@ -14,4 +14,6 @@ public interface AuthorService {
 
 	List<Author> listAuthors(AuthorQueryDo queryDo);
 
+	void sendMsg();
+
 }
