@@ -6,7 +6,7 @@
     <link href="/css/public.css" rel="stylesheet">
 </head>
 <body>
-<section class="content">
+<div class="content">
 <form action="/author/add" method="post">
         <div class="form-item">
             <label class="lab-item" >朝代</label>
@@ -22,7 +22,7 @@
         </div>
 
     <input  class=" el-button el-button--primary" type="submit" value="提交"/>
-</section>
+</div>
 </form>
 </body>
 </html>

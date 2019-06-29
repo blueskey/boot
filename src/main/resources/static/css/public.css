@@ -1,16 +1,25 @@
-body{}
-p.content {margin: 5px 20px;font-size: 12px}
-label.lab-item{text-align: right;font-size: 12px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box;display: inline}
+body{ font-size: 12px;background-color: #fff;}
+
+div.content {margin: 20px 20px;font-size: 12px}
 div.form-item{color: #606266;margin-bottom: 15px;}
 div.el-input-content{line-height: 40px;margin-left: 20px;}
 div.el-textarea-content{line-height: 40px;margin-left: 20px;}
-input.el-input-inner{background-color: #ffffff;border-radius: 4px;border: 1px solid #dcdfe6;padding: 0 15px; height: 40px;line-height: 40px;font-size: inherit;display: inline-block; }
+
+label.lab-item{text-align: right;font-size: 12px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box;display: inline; float: left;}
+
+input.el-input-inner{background-color: #ffffff;border-radius: 4px;border: 1px solid #dcdfe6;padding: 0 15px; height: 40px;line-height: 40px;font-size: 12px;display: inline-block; }
+
+select{ appearance:none; -moz-appearance:none; -webkit-appearance:none; background: url("../img/downrow.png") no-repeat scroll right center transparent;}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+select.el-select-inner{background-color: #ffffff;border-radius: 4px;border: 1px solid #dcdfe6;padding: 0 15px; height: 40px;line-height: 40px;font-size: 12px;display: inline-block; }
+
 textarea.el-textarea-inner{display: block;resize: vertical;padding: 15px;line-height: 1.5;border: 1px solid #dcdfe6;border-radius: 4px;}
-div label input.cl-1{width: 20%}
-div label input.cl-2{width: 40%}
-div label input.cl-3{width: 60%}
+div label select input.cl-1{width: 20%}
+div label select input.cl-2{width: 40%}
+div label select input.cl-3{width: 60%}
 
 .el-button{margin-left: 10px;text-align: center;padding: 12px 20px;font-size: 12px;border-radius: 4px;display: inline-block;line-height: 1;white-space: nowrap;cursor: pointer;background-color: #fff;border: 1px solid #dcdfe6;}
 .el-button--primary{color: #fff;background-color: #409eff;border-color: #409eff;}
-.el-button--primary:hover {color: #fff;background-color: #409aff;border-color: #409aff;}
+.el-button--primary:hover {color: #fff;background-color: #66b1ff;border-color: #66b1ff;}
 .el-button--danger{color: #fff;background-color: #f78989;border-color: #f78989;}
