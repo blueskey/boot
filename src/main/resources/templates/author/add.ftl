@@ -9,8 +9,8 @@
 <div class="content">
 <form action="/author/add" method="post">
         <div class="form-item">
-            <label class="lab-item" >朝代</label>
-            <div class="el-input-content cl-2" style="position: relative;" ><input class="el-input-inner " name="dynasty"/></div>
+            <label class="lab-item" >姓名</label>
+            <div class="el-input-content cl-2" style="position: relative;" ><input class="el-input-inner " name="name"/></div>
         </div>
         <div class="form-item">
             <label class="lab-item" >朝代</label>
