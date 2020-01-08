@@ -7,7 +7,7 @@ import com.my.entity.PoemWithBLOBs;
 
 import java.util.List;
 
-public interface PoemMapper {
+public interface PoemMapper{
     int deleteByPrimaryKey(Long id);
 
     int insert(PoemWithBLOBs record);

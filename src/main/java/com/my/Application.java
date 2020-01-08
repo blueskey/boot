@@ -1,5 +1,6 @@
 package com.my;
 
+import com.my.auth.AuthDes;
 import com.my.domain.AuthorQueryDo;
 import com.my.service.AuthorService;
 import org.mybatis.spring.annotation.MapperScan;
@@ -20,11 +21,14 @@ public class Application {
 
 	@Autowired
 	private AuthorService authorService;
+	@Autowired
+	private AuthDes authDes;
 
 	@ResponseBody
 	@RequestMapping("/")
 	public String hello() {
 		authorService.listAuthors(new AuthorQueryDo());
-		return "hello";
+
+		return authDes.getFirstName() + "-" + authDes.getLastName();
 	}
 }

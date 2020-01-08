@@ -30,7 +30,10 @@ mybatis:
   mapperLocations: classpath:mybatis/*.xml
 
 
-
+site:
+  auth:
+    firstName: hello
+    lastName: haha
 
 #
 #freemarker:

@@ -84,7 +84,7 @@
     set name = #{name,jdbcType=VARCHAR},
       dynasty = #{dynasty,jdbcType=VARCHAR},
       introduction = #{introduction,jdbcType=LONGVARBINARY}
-    where id = #{id,jdbcType=BIGINT}BaseResultMap
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.my.entity.Author">
     update author
