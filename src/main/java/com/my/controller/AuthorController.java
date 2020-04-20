@@ -2,6 +2,7 @@ package com.my.controller;
 
 import com.my.domain.AuthorQueryDo;
 import com.my.entity.Author;
+import com.my.log.MyLog;
 import com.my.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ public class AuthorController extends BaseController{
 	@Autowired
 	private AuthorService authorService;
 
-
+	@MyLog(module = "作者",operator = "哈哈")
 	@RequestMapping(value = "add",method = RequestMethod.GET)
 	public String toAdd() {
 
