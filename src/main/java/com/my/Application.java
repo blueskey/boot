@@ -17,6 +17,27 @@ import org.springframework.web.bind.annotation.RestController;
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
+
+//		//服务注册　
+//		Consul consul = Consul.builder().build();
+//		final AgentClient agentClient = consul.agentClient();
+//		String service = "myboot";
+//		String address = "localhost";
+//		String tag = "dev";
+//		int port = 8888;
+//		final String serviceId = address + ":" + port;
+//		ImmutableRegistration.Builder builder = ImmutableRegistration.builder();
+//		builder.id(serviceId).name(service).address(address).port(port).addTags(tag);
+//		agentClient.register(builder.build());
+//
+//		//jVM停止时摘除服务
+//
+//		Runtime.getRuntime().addShutdownHook(new Thread() {
+//		    @Override
+//			public void run() {
+//			    agentClient.deregister(serviceId);
+//			}
+//		});
 	}
 
 	@Autowired
