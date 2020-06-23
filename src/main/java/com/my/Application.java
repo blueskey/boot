@@ -3,6 +3,8 @@ package com.my;
 import com.my.auth.AuthDes;
 import com.my.domain.AuthorQueryDo;
 import com.my.service.AuthorService;
+import net.hasor.spring.boot.EnableHasor;
+import net.hasor.spring.boot.EnableHasorWeb;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -11,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@EnableHasorWeb
 @RestController
 @SpringBootApplication
+@EnableHasor
 @MapperScan({"com.my.mapper","com.my.mapper"})
 public class Application {
 	public static void main(String[] args) {
