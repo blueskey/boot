@@ -14,12 +14,9 @@ import org.elasticsearch.action.search.MultiSearchResponse;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.transport.TransportClient;
-import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +25,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.List;
 
 @Slf4j
@@ -49,12 +44,12 @@ public class EClientTest {
 
     static {
 
-        try {
-            client = new PreBuiltTransportClient(Settings.EMPTY)
-                    .addTransportAddress(new TransportAddress(InetAddress.getByName("192.168.40.128"), 9300));
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            client = new PreBuiltTransportClient(Settings.EMPTY)
+//                    .addTransportAddress(new TransportAddress(InetAddress.getByName("192.168.40.128"), 9300));
+//        } catch (UnknownHostException e) {
+//            e.printStackTrace();
+//        }
 
     }
 

@@ -29,6 +29,6 @@ public class AuthorServiceImpl implements AuthorService {
 
 	@Async
 	public void sendMsg() {
-		System.out.println(Thread.currentThread().getName() + "－－－－－－发送短信了");
+//		System.out.println(Thread.currentThread().getName() + "－－－－－－发送短信了");
 	}
 }
