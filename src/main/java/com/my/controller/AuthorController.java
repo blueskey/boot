@@ -4,7 +4,7 @@ import com.my.domain.AuthorQueryDo;
 import com.my.entity.Author;
 import com.my.log.MyLog;
 import com.my.service.AuthorService;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/author/")
-@Slf4j
+
 public class AuthorController extends BaseController{
+
+	private static Logger logger = Logger.getLogger(AuthorController.class);
 
 	@Autowired
 	private AuthorService authorService;
@@ -28,7 +30,7 @@ public class AuthorController extends BaseController{
 	}
 
 	@RequestMapping(value = "list") public String list(ModelMap modelMap, AuthorQueryDo queryDo) {
-		log.info("访问auth/list");
+		logger.info("访问auth/list");
 		modelMap.addAttribute("authors", authorService.listAuthors(queryDo));
 		return "author/list";
 	}
@@ -36,7 +38,7 @@ public class AuthorController extends BaseController{
 	@ResponseBody
 	@RequestMapping("add")
 	public String add(Author author) {
-		log.info("添加作者");
+		logger.info("添加作者");
 		authorService.addAuthor(author);
 		return "ok";
 	}
