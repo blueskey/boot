@@ -44,10 +44,13 @@ CREATE TABLE `poem` (
   `annotation` blob COMMENT '注释',
   `appreciate` blob COMMENT '赏析',
   `type` tinyint(4) DEFAULT NULL COMMENT '类型',
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `author_fk` (`author`),
   CONSTRAINT `author_fk` FOREIGN KEY (`author`) REFERENCES `author` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='作品表';
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='作品表';
+
 
 /*Data for the table `poem` */
 
