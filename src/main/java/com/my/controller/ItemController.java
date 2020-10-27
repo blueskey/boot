@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/item/")
+//@CacheConfig(cacheNames = "mycaffeineCache")
 public class ItemController extends BaseController{
 	private static final Logger logger = LoggerFactory.getLogger(ItemController.class);
 

@@ -22,8 +22,9 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 
-//		//服务注册　
-//		Consul consul = Consul.builder().build();
+		//服务注册　
+//		Consul consul;
+//		consul = Consul.builder().build();
 //		final AgentClient agentClient = consul.agentClient();
 //		String service = "myboot";
 //		String address = "localhost";

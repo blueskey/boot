@@ -29,7 +29,11 @@ public class AuthorController extends BaseController{
 		return "author/add";
 	}
 
-	@RequestMapping(value = "list") public String list(ModelMap modelMap, AuthorQueryDo queryDo) {
+	@RequestMapping(value = "list")
+//	@Cacheable(value = "user:info", depict = "用户信息缓存", key = "#allAuthorList",
+//			firstCache = @FirstCache(expireTime = 2, timeUnit = TimeUnit.SECONDS),
+//			secondaryCache = @SecondaryCache(expireTime = 30, preloadTime = 3, forceRefresh = true, timeUnit = TimeUnit.SECONDS))
+	public String list(ModelMap modelMap, AuthorQueryDo queryDo) {
 		logger.info("访问auth/list");
 		modelMap.addAttribute("authors", authorService.listAuthors(queryDo));
 		return "author/list";
@@ -42,4 +46,25 @@ public class AuthorController extends BaseController{
 		authorService.addAuthor(author);
 		return "ok";
 	}
+
+	@ResponseBody
+	@RequestMapping("test")
+	public String test() {
+		logger.info("test");
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		return "test ok";
+	}
+
+	@ResponseBody
+	@RequestMapping("test2")
+	public String test2() {
+		logger.info("test2");
+		return "test2 ok";
+	}
+
 }

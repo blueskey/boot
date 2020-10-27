@@ -34,6 +34,13 @@ spring:
     settings:
       number_format: '0.##'   #数字格式化，无小数点
 
+  application:
+    name: boot
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      #eager: true
 
 mybatis:
   typeAliasesPackage: com.my.entity
@@ -44,5 +51,3 @@ site:
   auth:
     firstName: hello
     lastName: haha
-
-

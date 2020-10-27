@@ -17,6 +17,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/poem/")
+//@CacheConfig(cacheNames = "mycaffeineCache")
 public class PoemController extends BaseController {
 
 	@Autowired
@@ -32,6 +33,7 @@ public class PoemController extends BaseController {
 	}
 
 	@ResponseBody
+//	@CachePut(key = "#poem.id")
 	@RequestMapping(value = "add",method = RequestMethod.POST)
 	public String add(PoemWithBLOBs poem) {
 		poemService.addPoem(poem);
