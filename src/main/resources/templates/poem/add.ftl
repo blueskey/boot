@@ -28,11 +28,11 @@
 
         <div class="form-item">
             <label class="lab-item" >内容</label>
-            <div class="el-input-content cl-2" style="position: relative;" ><input class="el-input-inner " name="content"/></div>
+            <div class="el-input-content cl-2" style="position: relative;" ><textarea class="el-textarea-inner" name="content"></textarea></div>
         </div>
         <div class="form-item">
             <label class="lab-item">注释</label>
-            <div class="el-textarea-content cl-2" style="position: relative;" ><textarea class="el-textarea-inner" name="content"></textarea></div>
+            <div class="el-textarea-content cl-2" style="position: relative;" ><textarea class="el-textarea-inner" name="annotation"></textarea></div>
         </div>
 
         <div class="form-item">

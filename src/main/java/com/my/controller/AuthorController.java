@@ -1,5 +1,8 @@
 package com.my.controller;
 
+import com.alibaba.csp.sentinel.Entry;
+import com.alibaba.csp.sentinel.SphU;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.my.domain.AuthorQueryDo;
 import com.my.entity.Author;
 import com.my.log.MyLog;
@@ -34,8 +37,14 @@ public class AuthorController extends BaseController{
 //			firstCache = @FirstCache(expireTime = 2, timeUnit = TimeUnit.SECONDS),
 //			secondaryCache = @SecondaryCache(expireTime = 30, preloadTime = 3, forceRefresh = true, timeUnit = TimeUnit.SECONDS))
 	public String list(ModelMap modelMap, AuthorQueryDo queryDo) {
-		logger.info("访问auth/list");
-		modelMap.addAttribute("authors", authorService.listAuthors(queryDo));
+		try (Entry entry = SphU.entry("authorList")) {
+			logger.info("访问auth/list");
+			modelMap.addAttribute("authors", authorService.listAuthors(queryDo));
+		} catch (BlockException e) {
+			// Handle rejected request.
+			e.printStackTrace();
+		}
+
 		return "author/list";
 	}
 

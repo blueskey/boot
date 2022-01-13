@@ -1,5 +1,6 @@
 package com.my.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.my.domain.PoemDo;
 import com.my.domain.PoemQueryDo;
 import com.my.entity.PoemWithBLOBs;
@@ -40,6 +41,7 @@ public class PoemController extends BaseController {
 		return "ok";
 	}
 
+	@SentinelResource("poemList")
 	@RequestMapping(value = "list",method = {RequestMethod.GET,RequestMethod.POST})
 	public String list(ModelMap modelMap, PoemQueryDo queryDo) {
 		modelMap.addAttribute("poems", poemService.listPoems(queryDo));
